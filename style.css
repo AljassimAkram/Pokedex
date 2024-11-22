@@ -1,0 +1,377 @@
+@font-face{
+    font-family: OpenSans;
+    src: url(./font/OpenSans.ttf);
+}
+/* General body styling */
+body {
+    font-family: OpenSans;
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    font-family:OpenSans;
+}
+
+/* Header styling */
+h1 {
+    color: #ffffff;
+    text-align: left;
+    margin-block-start: 0px;
+}
+
+/* Search bar styling */
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pokémon container styling */
+.pokemon-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 20px;
+    justify-items: center;
+    font-family:OpenSans;
+}
+
+/* Pokémon card styling */
+.pokemon-card {
+    background-color: #333333;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    overflow: hidden;
+    font-family:OpenSans;
+}
+
+/* Hover effect on Pokémon card */
+.pokemon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.pokemon-card:hover::before {
+    opacity: 1;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+/* Pokémon card image styling */
+.pokemon-card img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Pokémon card text styling */
+.pokemon-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.pokemon-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Type badge styling */
+.type-badge {
+    display: inline-block;
+    margin: 5px 2px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.type-badge .fas {
+    font-size: 16px; /* Adjust size as needed */
+    vertical-align: middle;
+}
+
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content styling with fixed width and height */
+.modal-content {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 500px; /* Fixed width */
+    width: 90%;
+    min-width: 320px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Modal header styling */
+.modal-header {
+    background-color: #444444;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.modal-header img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* Tab button container styling */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333333;
+    border-top: 1px solid #444444; 
+}
+
+/* Tab button styling */
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    flex: 1;
+}
+
+.tab-button:hover,
+.tab-button.active {
+    background-color: #058709;
+    color: black; /* Accent color for active tab */
+}
+
+/* Tab content styling */
+.tab-content {
+    display: none;
+    padding: 20px;
+    text-align: left;
+    min-height: 200px; /* Minimum height for consistency */
+}
+
+.tab-content:first-child {
+    display: block;
+}
+
+.label {
+    display: inline-block;
+    width: 200px; /* Feste Breite für die Ausrichtung der Labels */
+}
+p{
+    margin-block-start: 0px;
+}
+.stat-row {
+    width: 60%; /* Adjust as needed */
+}
+
+/* Fortschrittsbalken-Styling */
+.stat-bar {
+    height: 8px; /* Adjust the height of the bar */
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.stat-fill {
+    height: 100%;             /* Höhe des gefüllten Balkens */
+    background-color: #4CAF50; /* Grün für gefüllten Bereich */
+    border-radius: 5px;
+}
+
+
+
+/* Evolution chain styling */
+.evolution-chain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.evolution-step {
+    margin: 0 5px;
+    text-align: center;
+}
+
+.evolution-step img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.evolution-arrow {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+/* Type colors for badges */
+.fire {
+    background-color: #F08030;
+}
+
+.water {
+    background-color: #6890F0;
+}
+
+.grass {
+    background-color: #78C850;
+}
+
+.electric {
+    background-color: #F8D030;
+}
+
+.bug {
+    background-color: #A8B820;
+}
+
+.poison {
+    background-color: #A040A0;
+}
+
+.flying {
+    background-color: #A890F0;
+}
+.normal {
+    background-color: #c5c3cd;
+}
+.fairy {
+    background-color: #f2b2f3;
+}
+.ground{
+    background-color: rgb(126, 69, 69);
+}
+.ich{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+/* Ladebildschirm-Design */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e; /* Pass die Farbe an */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 9999;
+}
+
+.loading-icon img {
+    width: 100px; /* Größe des Lade-Icons */
+    animation: spin 2s linear infinite;
+}
+
+/* Dreh-Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width:700px){
+
+    .modal-content {
+        
+    }
+
+}
+@media (max-width: 600px) {
+    .modal-content {
+        
+    }
+}
+
+@media (max-width:550px){
+  header{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 55px;
+  }
+  #search-bar{
+    width: 225px;
+  }
+  .modal-content {
+    
+  }
+
+    
+}
+@media (max-width: 400px) {
+    .modal-content {
+        
+    }
+}
