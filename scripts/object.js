@@ -21,4 +21,8 @@ const typeColorMap = {
     ground: "#E0C068", flying: "#A890F0", psychic: "#F85888", bug: "#A8B820",
     rock: "#B8A038", ghost: "#705898", dragon: "#7038F8", dark: "#705848",
     steel: "#B8B8D0", fairy: "#EE99AC"
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 5a1aa54afe3c18e2398bb1ef5939aac35588e8e5

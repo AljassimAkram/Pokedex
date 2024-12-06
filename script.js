@@ -198,22 +198,7 @@ async function showPokemonDetails(index) {
     showTab('main');
 }
 
-
-function getBackgroundColor(types) {
-    const firstType = types[0].type.name;
-    return typeColorMap[firstType] || "#ccc";
-}
-
-
-function generateAbilitiesHTML(abilities) {
-        if (abilities.length > 0) {
-            return capitalize(abilities[0].ability.name);
-        }
-        return "No ability";
-}
-
-
-/* Tab Switching */
+/* Tab-Wechsel */
 function showTab(tabId) {
     hideAllTabs();
     deactivateAllButtons();
@@ -293,3 +278,10 @@ function displayPokemonList(pokemonList) {
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+document.addEventListener("DOMContentLoaded", () => {
+    initializePokedex();
+
+    // Event-Listener für Navigation
+    document.getElementById("prev-pokemon-btn").addEventListener("click", () => navigateModal(-1));
+    document.getElementById("next-pokemon-btn").addEventListener("click", () => navigateModal(1));
+});
