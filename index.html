@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/assets.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-     <header>
+<body onload="initializePokedex()">
+    <header>
         <div class="navbar">
             <div class="nav-logo">
-              <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Pokédex Logo">
+              <img src="./img/pokemon.png" alt="Pokédex Logo">
               <span>Pokédex</span>
             </div>
             <div class="nav-search">
@@ -19,57 +21,27 @@
             </div>
         </div>
      </header>
-
-    <!-- Main Content -->
     <main>
         <div id="pokemon-cards-section"></div>
         <div id="load-more-container">
             <button id="load-more-btn" onclick="loadMorePokemons()">Load More</button>
         </div>
     </main>
-
-    <!-- Modal for Pokémon Details -->
-    <div id="pokemon-modal" class="hidden"onclick="closeModal()">
-        <div id="modal-content" onclick="closeModal()">
-            <button id="close-modal-btn" onclick="closeModal()">✖</button>
-            <div id="modal-details">
-                <!-- Pokémon Header -->
-                <div class="modal-header">
-                    <span class="pokemon-id" id="pokemon-id"></span>
-                    <span class="pokemon-name" id="pokemon-name"></span>
-                    <div class="pokemon-image">
-                        <img id="pokemon-image" src="" alt="Pokemon">
-                    </div>
-                </div>
-                <!-- Pokémon Tabs -->
-                <div class="tabs">
-                    <button class="tab-btn" onclick="showTab(main)">Main</button>
-                    <button class="tab-btn" onclick="showTab(stats)">Stats</button>
-                    <button class="tab-btn" onclick="showTab(evo)">Evo Chain</button>
-                </div>
-                <!-- Tab Contents -->
-                <div class="tab-content-container">
-                    <div id="main" class="tab-content"></div>
-                    <div id="stats" class="tab-content hidden"></div>
-                    <div id="evo" class="tab-content hidden"></div>
-                </div>
-            </div>
+    <div id="pokemon-modal" class="hidden" onclick="toggleModal()">
+        <div id="modal-content" onclick="toggleModal()">
+            <button id="close-modal-btn" onclick="toggleModal()">✖</button>
+            <div id="modal-details"></div>
             <div>
                 <button id="prev-pokemon-btn" class="nav-btn" onclick="navigateModal(-1)">←</button>
                 <button id="next-pokemon-btn" class="nav-btn" onclick="navigateModal(1)">→</button>
             </div>
-            
         </div>
     </div>
-
-    <!-- Loading Spinner -->
     <div id="loading-spinner" class="hidden">
         <img src="https://cdn-icons-png.flaticon.com/512/189/189792.png" alt="Loading">
     </div>
-
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', initializePokedex);
-    </script>
+    <script src="./scripts/object.js"></script>
+    <script src="./scripts/template.js"></script>
 </body>
 </html>
